@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Find user</title>
+</head>
+<body>
+<h1>Form</h1>
+<br/>
+
+<form action="#" th:action="@{/find}" th:object="${user}" method="post">
+    <table>
+        <tr>
+            <td>First name: </td>
+            <td><input type="text" th:field="*{firstName}"/></td>
+        </tr>
+        <tr>
+            <td>Last name: </td>
+            <td><input type="text" th:field="*{lastName}"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"/></td>
+            <td><input type="reset" value="Reset"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="User form" onclick="window.location.href='/user'"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

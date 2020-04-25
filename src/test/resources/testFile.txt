@@ -1,0 +1,7 @@
+{"firstName":"Misha","lastName":"Schepachkov","middleName":"Vadimovich","age":21,"salary":188.0,"workName":"Netcracker","mail":"lolkek@cheburek.com"}
+
+abfasfda
+{"firstName":"Roma","lastName":"Galigin","middleName":"Artemievich","age":55,"salary":300.0,"workName":"artist","mail":"artist@mail.com"}
+{"firstName":"Vitalii","lastName":"Ivanov","middleName":"Michalovich","age":45,"salary":200.0,"workName":"carWasher","mail":"thebest@varenik.com"}
+{sadvcxv}
+fdsfdsfdsf

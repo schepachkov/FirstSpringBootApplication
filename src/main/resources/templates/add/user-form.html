@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>User form</title>
+</head>
+<body>
+    <h1>Form</h1>
+    <br/>
+
+    <form action="#" th:action="@{/user}" th:object="${user}" method="post" >
+        <table>
+            <tr>
+                <td>First name: </td>
+                <td><input type="text" th:field="*{firstName}"/></td>
+            </tr>
+            <tr>
+                <td>Last name: </td>
+                <td><input type="text" th:field="*{lastName}"/></td>
+            </tr>
+            <tr>
+                <td>Middle name: </td>
+                <td><input type="text" th:field="*{middleName}"/></td>
+            </tr>
+            <tr>
+                <td>Age: </td>
+                <td><input type="text" th:field="*{age}"/></td>
+            </tr>
+            <tr>
+                <td>Salary: </td>
+                <td><input type="text" th:field="*{salary}"/></td>
+            </tr>
+            <tr>
+                <td>Work name: </td>
+                <td><input type="text" th:field="*{workName}"/></td>
+            </tr>
+            <tr>
+                <td>Mail: </td>
+                <td><input type="text" th:field="*{mail}"/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit"/></td>
+                <td><input type="reset" value="Reset"></td>
+            </tr>
+            </table>
+        <table>
+            <tr>
+                <td><input type="button" value="Find user" onclick="window.location.href='/find'"/></td>
+                <td><input type="button" value="Upload user" onclick="window.location.href='/upload'"/></td>
+                <td><input type="button" value="Send mail" onclick="window.location.href='/send/mail'"/></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

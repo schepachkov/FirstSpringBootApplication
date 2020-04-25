@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Result of submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<h1>User Information</h1>
+
+<p th:text="'First name: ' + ${fn}"/>
+<p th:text="'Last name: ' + ${ln}"/>
+<p th:text="'Middle name: ' + ${mn}"/>
+<p th:text="'Age: ' + ${age}"/>
+<p th:text="'Salary: ' + ${sal}"/>
+<p th:text="'Work: ' + ${work}"/>
+<p th:text="'Mail: ' + ${mail}"/>
+<p th:text="'Browser info : ' +${browserInfo}"/>
+<p th:text="'Current time : ' + ${time}"/>
+<input type="button" value="ok" onclick="window.location.href='/find'" />
+</body>
+</html>

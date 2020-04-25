@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Please write your data</h1>
+<br/>
+<form action="#" th:action="@{/send/mail}" th:object="${sender}" method="post">
+    <table>
+        <tr>
+            <td>Email from: </td>
+            <td><input type="text" th:field="*{from}"/></td>
+        </tr>
+        <tr>
+            <td>Password: </td>
+            <td><input type="password" th:field="*{pass}"/></td>
+        </tr>
+        <tr>
+            <td>Email to: </td>
+            <td><input type="text" th:field="*{to}"/></td>
+        </tr>
+        <tr>
+            <td>Subject: </td>
+            <td><input type="text" th:field="*{textSubject}"/></td>
+        </tr>
+        <tr>
+            <td>Text message: </td>
+            <td><input type="text" th:field="*{textMessage}"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"/></td>
+            <td><input type="reset" value="Reset"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="to user form" onclick="window.location.href='/user'"/></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
