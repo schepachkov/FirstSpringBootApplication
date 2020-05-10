@@ -1,22 +1,20 @@
 package app.controllers;
 
-import app.entity.User;
+import app.service.UploadService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import app.util.Helper;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
 
 @Controller
 public class UploadController {
+
+    @Autowired
+    private UploadService uploadService;
 
     @GetMapping("/upload")
     public String getUploadForm(Model model){
@@ -25,23 +23,6 @@ public class UploadController {
 
     @PostMapping("/upload")
     public String upload(Model model, @RequestParam("file") MultipartFile file){
-        model.addAttribute("ref", "/upload");
-        String textRef = "try again";
-        String textInfo = "Didn't found users in the file";
-        try {
-            File tmpFile = new File("src/main/resources/files/tmp.txt");
-            Files.write(Paths.get("src/main/resources/files/tmp.txt"), file.getBytes());
-            List<User> userList = Helper.readUserFromTheFile(tmpFile, true);
-            if (!userList.isEmpty()){
-                userList.forEach(Helper::writeUser);
-                textInfo = "Congratulations! Was added " + userList.size() + " users.";
-                textRef = "to upload form";
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        model.addAttribute("mainText", textInfo);
-        model.addAttribute("textRef", textRef);
-        return "page-info";
+        return uploadService.upload(model, file);
     }
 }
